@@ -31,7 +31,7 @@ int main()
 	cout << cpp_course::any_cast<std::string>(any_string2) << "\n";
 	any_string2 = any1;
 	cout << cpp_course::any_cast<std::string>(any_string2) << "\n";
-	cpp_course::any_cast<std::string>(any_string2) = "Fuck you and your tests";
+	cpp_course::any_cast<std::string>(any_string2) = "Some tests";
 	cout << cpp_course::any_cast<std::string>(any_string2) << "\n";
 	cout << any_string2.get_type().name() << std::endl;
 	any any_int(42);
