@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #include <type_traits>
 #include <iostream>
 #include <functional>
@@ -35,8 +36,8 @@ namespace cpp_course
 			}
 		}
 
-		call_once_function(call_once_function&& other) noexcept : 
-			ops(other.ops)
+		call_once_function(call_once_function&& other) noexcept :
+		ops(other.ops)
 		{
 			other.ops->mover(other.storage, storage);
 			other.ops = get_empty_ops();
@@ -154,7 +155,7 @@ namespace cpp_course
 			caller_type caller;
 			mover_type mover;
 
-			constexpr func_ops(deleter_type _deleter, caller_type _caller, mover_type _mover) : 
+			constexpr func_ops(deleter_type _deleter, caller_type _caller, mover_type _mover) :
 				deleter(_deleter),
 				caller(_caller),
 				mover(_mover)
@@ -164,15 +165,15 @@ namespace cpp_course
 		template <typename F>
 		static const func_ops* get_func_ops()
 		{
-			static constexpr func_ops instance = is_small_type<F> ? 
-				func_ops{ delete_impl_small<F>, call_impl_small<F>, move_impl_small<F>} :
-				func_ops{delete_impl_big<F>, call_impl_big<F>, move_impl_big<F>};
+			static constexpr func_ops instance = is_small_type<F> ?
+				func_ops{ delete_impl_small<F>, call_impl_small<F>, move_impl_small<F> } :
+				func_ops{ delete_impl_big<F>, call_impl_big<F>, move_impl_big<F> };
 			return &instance;
 		}
 
 		static const func_ops* get_empty_ops()
 		{
-			static constexpr func_ops empty_ops = 
+			static constexpr func_ops empty_ops =
 				func_ops{ delete_impl_empty, call_impl_empty, move_impl_empty };
 			return &empty_ops;
 		}
