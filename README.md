@@ -17,7 +17,7 @@ Implemented using Small Object Optimization (SOO). The data structure is fully r
 
 http://en.cppreference.com/w/cpp/utility/optional
 
-Stores objects on stack, does't allocate memory on heap.
+Stores objects in the optional, does't allocate memory for storing on heap.
 
 4) template-list - implementation of linked list, using c++-17 template metaprogramming. All functions are calculated in compile-time.
 
