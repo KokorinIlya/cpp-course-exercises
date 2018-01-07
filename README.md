@@ -4,6 +4,7 @@ Excercises for c++ course
 Including:
 
 1) any - my implementation of std::any or boost::any.
+
 http://en.cppreference.com/w/cpp/utility/any
 
 Implemented using void* with type_info (any_first) and polymorph classes (any_second)
