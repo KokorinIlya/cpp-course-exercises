@@ -11,7 +11,7 @@ Implemented using void* with type_info (any_first) and polymorph classes (any_se
 
 2) call_once_function - function, identical to std::function, that can store and call call_once functional objects (like objects, created by call_once_bind)
 
-Implemented using Small Object Optimization (SOO).
+Implemented using Small Object Optimization (SOO). The data structure is fully reentrancy-safe
 
 3) optional - my implementation of std::optional or boost::optional
 
